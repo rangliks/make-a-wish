@@ -1,0 +1,17 @@
+{
+    "questions": [
+        {
+            "question": "...אני רוצה לגדל את הילדים שלי",
+            "answers": [
+                {
+                    "isRight": false,
+                    "answer": "בעולם מלא אדישות"
+                },
+                {
+                    "isRight": true,
+                    "answer": "בעולם מלא חמלה"
+                }
+            ]
+        }
+    ]
+}

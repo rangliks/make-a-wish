@@ -1,0 +1,70 @@
+{
+    "questions": [
+        {
+            "question" : "...אני רוצה לגדל את הילדים שלי",
+            "answers": [{
+                "isRight": false,
+                "answer":  "בעולם מלא אדישות"
+            },
+            {
+                "isRight": true,
+                "answer": "בעולם מלא חמלה"
+            }]
+        },
+        {
+            "question" : "...אני רוצה לגדל את הילדים שלי",
+            "answers": [{
+                "isRight": true,
+                "answer": "בעולם שליו"
+            },
+            {
+                "isRight": false,
+                "answer": "בעולם אלים"
+            }]
+        },
+        {
+            "question" : "...אני רוצה לגדל את הילדים שלי",
+            "answers": [{
+                "isRight": true,
+                "answer": "בעולם בו מכבדים אינדיוידואלים"
+            },
+            {
+                "isRight": false,
+                "answer": "בעולם בו מנצלים אינדיוידואלים"
+            }]
+        },
+        {
+            "question" : "...אני רוצה לגדל את הילדים שלי",
+            "answers": [{
+                "isRight": false,
+                "answer": "בעולם בו החזק מנצל את החלש"
+            },
+            {
+                "isRight": true,
+                "answer": "בעולם בו החזק עוזר לחלש ומגן עליו"
+            }]
+        },
+        {
+            "question" : "...אני רוצה לגדל את הילדים שלי",
+            "answers": [{
+                "isRight": false,
+                "answer": "בעולם עם צורך בבתי מטבחיים"
+            },
+            {
+                "isRight": true,
+                "answer": "בעולם ללא צורך בבתי מטבחיים"
+            }]
+        },
+        {
+            "question" : "...אני רוצה לגדל את הילדים שלי",
+            "answers": [{
+                "isRight": true,
+                "answer": "בעולם בו אם אהיה בצרה, יהיה מי שיעזור לי"
+            },
+            {
+                "isRight": false,
+                "answer": "בעולם בו אם אהיה בצרה, לא יהיה מי שיעזור לי"
+            }]
+        }
+    ]
+}

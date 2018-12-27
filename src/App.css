@@ -9,6 +9,17 @@
 
 .App-header {
   background-color: #282c34;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-body {
+  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -29,4 +40,79 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+tr {
+  height: 5%;
+}
+.wrapper {
+  width:1000px;
+      text-align:center;
+      margin-right:auto;
+      margin-left:auto;
+      margin-top:1%x;
+      background-color: #282c34;
+      padding:1%x;
+      position: absolute;
+      top: 2%;
+}
+
+table {
+  width: 100%;
+  margin: auto;
+  border: 1px solid #ddd;
+}
+.wish-box {
+  display: inline-block;
+  width: 70%;
+  padding: 3%;
+  box-sizing: border-box;
+  cursor: pointer;
+  text-align: right;
+}
+td {
+  overflow: hidden; width: 280px; text-align: left; vertical-align: top; white-space: nowrap;border: 1px solid #ddd;
+}
+
+.blurry {
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+  border-radius: 50%;
+}
+.wish-hidden {
+  width: 40%;
+  float: right;
+  /* animation: roll 17s infinite;
+  transform: rotate(1deg); */
+}
+
+.wish-opening {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.wish-communicate {
+  width: 30%;
+  margin: 0 auto;
+}
+
+.answer {
+  font-size: inherit;
+}
+@keyframes roll {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.question {
+  padding: 3%;
+}
+
+p {
+  font-size: 80%;
+  line-height: 80%;
 }
