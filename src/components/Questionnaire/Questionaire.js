@@ -1,7 +1,7 @@
 import React from 'react';
 import Question from './Question';
 import WishBox from "./WishBox";
-import questionsJson from '../../questionaires/questions.1.json';
+import questionsJson from '../../questionaires/questions.json';
 
 class Questionaire extends React.Component {
     constructor(props) {
@@ -14,13 +14,18 @@ class Questionaire extends React.Component {
         };
 
         this.state.questions.questions.forEach(question => {
-            question.answers[0].clickable = true;
-            question.answers[1].clickable = true;
+            question.answers[0].clickable = false;
+            question.answers[1].clickable = false;
             question.answers[0].showAnswer = false;
             question.answers[1].showAnswer = false;
             question.answers[0].done = false;
             question.answers[1].done = false;
         });
+
+        this.state.questions.questions[0].answers[0].showAnswer = true;
+        this.state.questions.questions[0].answers[1].showAnswer = true;
+        this.state.questions.questions[0].answers[0].clickable = true;
+        this.state.questions.questions[0].answers[1].clickable = true;
         console.log('initial state', this.state);
     }
 
@@ -30,57 +35,34 @@ class Questionaire extends React.Component {
         let qs = questionsObj.questions[this.state.currentQuestion];
         let chosen = qs.answers[wishIndex];
         let currentRow = this.state.currentQuestion;
+        let nextRow = this.state.currentQuestion + 1;
         // opened right answer
-        if (chosen.isRight && !chosen.showAnswer) {
+        if (chosen.isRight) {
             console.log('opened right answer');
-            questionsObj.questions[this.state.currentQuestion].answers[wishIndex].showAnswer = true;
-            questionsObj.questions[this.state.currentQuestion].answers[wishIndex].clickable = false;
-            questionsObj.questions[this.state.currentQuestion].answers[otherIndex].showAnswer = true;
-            questionsObj.questions[this.state.currentQuestion].answers[otherIndex].clickable = false;
-            questionsObj.questions[this.state.currentQuestion].answers[otherIndex].done = true;
-            questionsObj.questions[this.state.currentQuestion].answers[otherIndex].done = true;
+            questionsObj.questions[currentRow].answers[wishIndex].showAnswer = true;
+            questionsObj.questions[currentRow].answers[wishIndex].clickable = false;
+            questionsObj.questions[currentRow].answers[otherIndex].showAnswer = true;
+            questionsObj.questions[currentRow].answers[otherIndex].clickable = false;
+            questionsObj.questions[currentRow].answers[wishIndex].done = true;
+            questionsObj.questions[currentRow].answers[otherIndex].done = true;
 
-            console.log('llll')
-            console.log(currentRow, this.state)
-            if (currentRow < this.state.totalQuestions) {
-                currentRow++;
+            console.log(currentRow, this.state.totalQuestions)
+            if (nextRow < this.state.totalQuestions) {
+                questionsObj.questions[nextRow].answers[wishIndex].showAnswer = true;
+                questionsObj.questions[nextRow].answers[wishIndex].clickable = true;
+                questionsObj.questions[nextRow].answers[otherIndex].showAnswer = true;
+                questionsObj.questions[nextRow].answers[otherIndex].clickable = true;
             }
+            
+            currentRow++;
         }
-        // console.log(`right [${rightAnswer}]`);
+        
         // opened wrong answer
         else if (!chosen.isRight && !chosen.showAnswer) {
             console.log('opened wrong answer');
-            questionsObj.questions[this.state.currentQuestion].answers[wishIndex].showAnswer = true;
-            questionsObj.questions[this.state.currentQuestion].answers[wishIndex].clickable = true;
-            questionsObj.questions[this.state.currentQuestion].answers[otherIndex].showAnswer = false;
-            questionsObj.questions[this.state.currentQuestion].answers[otherIndex].clickable = false;
-            setTimeout(() => {
-                let nuState = Object.assign({},
-                    this.state
-                );
-                console.log("this.state")
-                console.log(this.state)
-                nuState.questions.questions[this.state.currentQuestion].answers[wishIndex].showAnswer = false;
-                nuState.questions.questions[this.state.currentQuestion].answers[wishIndex].clickable = true;
-                nuState.questions.questions[this.state.currentQuestion].answers[otherIndex].showAnswer = false;
-                nuState.questions.questions[this.state.currentQuestion].answers[otherIndex].clickable = true;
-                this.setState({
-                    nuState
-                })
-            }, 1500);
         }
 
-        // closed wrong answer
-        else if (!chosen.isRight && chosen.showAnswer) {
-            console.log('closed wrong answer');
-            questionsObj.questions[this.state.currentQuestion].answers[wishIndex].showAnswer = false;
-            questionsObj.questions[this.state.currentQuestion].answers[wishIndex].clickable = true;
-            questionsObj.questions[this.state.currentQuestion].answers[otherIndex].showAnswer = false;
-            questionsObj.questions[this.state.currentQuestion].answers[otherIndex].clickable = true;
-        }
-
-        // console.log(`answer clicked is [${wishIndex} - ${chosen.answer}] current question above:`);
-        //console.log(this.props);
+        console.log(questionsObj);
 
         this.setState({
             ...this.state,
@@ -97,7 +79,7 @@ class Questionaire extends React.Component {
         // console.log(this.state.currentQuestion, this.state.totalQuestions)
         let qs = this.state.questions.questions[this.state.currentQuestion];
         let answersRows = [];
-        for (let i = 0; i <= this.state.currentQuestion; i++) {
+        for (let i = 0; i <= this.state.totalQuestions; i++) {
             if (i >= this.state.totalQuestions) break;
             let row = this.state.questions.questions[i];
             answersRows.push(
@@ -108,6 +90,7 @@ class Questionaire extends React.Component {
             );
         }
         let nextButton = <div />;
+        console.log('current::::::', this.state.currentQuestion, this.state.totalQuestions)
         if (this.state.currentQuestion >= this.state.totalQuestions) {
             nextButton = <ul className="pager">
                 <li><button type="button" className="btn btn-primary" onClick={this.goToNextPage.bind(this)} >...המשך</button></li>

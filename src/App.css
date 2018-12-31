@@ -71,7 +71,7 @@ table {
   text-align: right;
 }
 td {
-  overflow: hidden; width: 280px; text-align: left; vertical-align: top; white-space: nowrap;border: 1px solid #ddd;
+  overflow: hidden; width: 280px; text-align: left; vertical-align: top; white-space: nowrap;border: 1px solid #ddd; word-wrap: normal;
 }
 
 .blurry {

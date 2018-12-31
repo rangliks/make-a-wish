@@ -1,0 +1,26 @@
+{
+    "Watch": {
+        "text": "אני רוצה לראות",
+        "class": "btn btn-primary"
+    },
+    "Learn": {
+        "text": "אני רוצה ללמוד",
+        "class": "btn btn-secondary"
+    },
+    "Join": {
+        "text": "אני רוצה לקחת חלק",
+        "class": "btn btn-success"
+    },
+    "Donate": {
+        "text": "אני רוצה לתרום",
+        "class": "btn btn-danger"
+    },
+    "Update": {
+        "text": "אני רוצה להתעדכן",
+        "class": "btn btn-warning"
+    },
+    "Share": {
+        "text": "אני רוצה להעביר את זה הלאה",
+        "class": "btn btn-info"
+    }
+}
