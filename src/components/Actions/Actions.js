@@ -14,7 +14,7 @@ class Actions extends React.Component {
             currentAction: '',
             modules
         }
-    
+
     }
 
     actionClicked(action) {
@@ -35,7 +35,7 @@ class Actions extends React.Component {
     render() {
         let currentAction = this.state.currentAction;
         let actions = [];
-        if(this.state.main) {
+        if (this.state.main) {
             for (let action in actionsJson) {
                 let current = actionsJson[action];
                 actions.push(
@@ -50,7 +50,12 @@ class Actions extends React.Component {
             actions.push(<Comp key={currentAction} action={actionsJson[currentAction]} back={this.resetState.bind(this)} />)
         }
         console.log('actions', this.state);
-        return <div>{actions}</div>;
+        return  <div>
+                    <div>
+                        <img src="wish.jpg" className="wish-communicate" alt="hidden wish" />
+                    </div>
+                    {actions}
+                </div>;
     }
 }
 

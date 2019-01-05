@@ -116,3 +116,25 @@ p {
   font-size: 80%;
   line-height: 80%;
 }
+
+.communicate-text-line {
+    animation-name: topFadeOut;
+    animation-duration: 8s;
+}
+
+@keyframes topFadeOut {
+  0% {
+    top: -3rem;
+    opacity: 0;
+  }
+
+  75% {
+    top: 25%;
+    opacity: 1;
+  }
+}
+
+.communicate-sentences-section {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+}
