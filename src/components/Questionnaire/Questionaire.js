@@ -84,8 +84,8 @@ class Questionaire extends React.Component {
             let row = this.state.questions.questions[i];
             answersRows.push(
                 <tr key={i}>
-                    <td><WishBox answer={row.answers[0]} clicked={this.answerClick.bind(this)} wishIndex={0} /></td>
-                    <td><WishBox answer={row.answers[1]} clicked={this.answerClick.bind(this)} wishIndex={1} /></td>
+                    <td className="col-8"><WishBox answer={row.answers[0]} clicked={this.answerClick.bind(this)} wishIndex={0} /></td>
+                    <td className="col-8"><WishBox answer={row.answers[1]} clicked={this.answerClick.bind(this)} wishIndex={1} /></td>
                 </tr>
             );
         }
