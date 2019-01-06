@@ -46,21 +46,22 @@ tr {
   height: 5%;
 }
 .wrapper {
-  width:1000px;
-      text-align:center;
-      margin-right:auto;
-      margin-left:auto;
-      margin-top:1%x;
-      background-color: #282c34;
-      padding:1%x;
-      position: absolute;
-      top: 2%;
+    width:90%;
+    text-align:center;
+    margin-right:auto;
+    margin-left:auto;
+    margin-top:1%x;
+    background-color: #282c34;
+    padding:1%x;
+    position: absolute;
+    top: 2%;
 }
 
 table {
   width: 100%;
   margin: auto;
   border: 1px solid #434c5f;
+  table-layout: fixed;
 }
 
 .wish-box {
@@ -71,8 +72,9 @@ table {
   cursor: pointer;
   text-align: right;
 }
+
 td {
-  overflow: hidden; width: 280px; text-align: left; vertical-align: top; white-space: nowrap;border: 1px solid #434c5f; word-wrap: normal;
+  overflow: hidden;word-wrap: break-word; text-align: left; vertical-align: top; white-space: nowrap;border: 1px solid #434c5f;
 }
 
 .blurry {
@@ -81,24 +83,24 @@ td {
   border-radius: 50%;
 }
 .wish-hidden {
-  width: 40%;
+  width: 30%;
   float: right;
   /* animation: roll 17s infinite;
   transform: rotate(1deg); */
 }
 
 .wish-opening {
-  width: 60%;
-  margin: 0 auto;
-}
-
-.wish-communicate {
   width: 30%;
   margin: 0 auto;
 }
 
+.wish-communicate {
+  width: 15%;
+  margin: 0 auto;
+}
+
 .answer {
-  font-size: inherit;
+  font-size: 70%;
 }
 @keyframes roll {
   0% {
@@ -156,4 +158,8 @@ p {
   top: 0;
   right: 0;
   background: transparent;
+}
+
+.app-body-inner {
+  margin-top: 4%;
 }

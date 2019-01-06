@@ -52,19 +52,19 @@ class AppWrapper extends React.Component {
         let body;
         switch (this.state.currentStage) {
             case 0:
-                body = <div><Opening formCallback={this.formCallback.bind(this)} /></div>;
+                body = <div className="app-body-inner" ><Opening formCallback={this.formCallback.bind(this)} /></div>;
                 break;
             case 1:
-                body = <div><Questionaire formCallback={this.formCallback.bind(this)} /></div>;
+                body = <div className="app-body-inner" ><Questionaire formCallback={this.formCallback.bind(this)} /></div>;
                 break;
             case 2:
-                body = <div><Communicate formCallback={this.formCallback.bind(this)} /></div>;
+                body = <div className="app-body-inner"><Communicate formCallback={this.formCallback.bind(this)} /></div>;
                 break;
             case 3:
-                body = <div><Actions formCallback={this.formCallback.bind(this)} /></div>;
+                body = <div className="app-body-inner"><Actions formCallback={this.formCallback.bind(this)} /></div>;
                 break;
             case 4:
-                body = <div>
+                body = <div className="app-body-inner">
                     <div style={{ clear: "both", margin: "5%" }}>
                         <button type="button" className="btn btn-primary" onClick={this.reset.bind(this)} >התחל מחדש</button>
                     </div>
@@ -76,7 +76,9 @@ class AppWrapper extends React.Component {
                 
         }
 
-        return this.state.currentStage > 0 && this.state.currentStage < 4 ? <div>{body}{skip}{back}</div> : <div>{body}</div>;
+        return this.state.currentStage > 0 && this.state.currentStage < 4 ? 
+            <div>{body}{skip}{back}</div> : 
+            <div>{body}</div>;
     }
 }
 
