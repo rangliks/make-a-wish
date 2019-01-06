@@ -27,26 +27,56 @@ class AppWrapper extends React.Component {
             currentStage: 0
         })
     }
-    
+
+    skip() {
+        this.setState({
+            currentStage: this.state.currentStage + 1
+        });
+    }
+
+    back() {
+        if(this.state.currentStage > 0) {
+            this.setState({
+                currentStage: this.state.currentStage -1
+            });
+        }
+    }
+
     render() {
+        let skip =  <div style={{ clear: "both", margin: "5%" }}>
+                        <button type="button" className="btn btn-primary top-button-right" onClick={this.skip.bind(this)} >דלג</button>
+                    </div>;
+        let back =  <div style={{ clear: "both", margin: "5%" }}>
+                        <button type="button" className="btn btn-primary top-button-left" onClick={this.back.bind(this)} >חזור</button>
+                    </div>;
+        let body;
         switch (this.state.currentStage) {
             case 0:
-                return <div><Opening formCallback={this.formCallback.bind(this)} /></div>;
+                body = <div><Opening formCallback={this.formCallback.bind(this)} /></div>;
+                break;
             case 1:
-                return <div><Questionaire formCallback={this.formCallback.bind(this)} /></div>;
+                body = <div><Questionaire formCallback={this.formCallback.bind(this)} /></div>;
+                break;
             case 2:
-                return <div><Communicate formCallback={this.formCallback.bind(this)} /></div>;
+                body = <div><Communicate formCallback={this.formCallback.bind(this)} /></div>;
+                break;
             case 3:
-                return <div><Actions formCallback={this.formCallback.bind(this)} /></div>;
+                body = <div><Actions formCallback={this.formCallback.bind(this)} /></div>;
+                break;
             case 4:
-                return  <div>
-                            <div style={{ clear: "both", margin: "5%" }}>
-                                <button type="button" className="btn btn-primary" onClick={this.reset.bind(this)} >התחל מחדש</button>
-                            </div>
-                        </div>;
+                body = <div>
+                    <div style={{ clear: "both", margin: "5%" }}>
+                        <button type="button" className="btn btn-primary" onClick={this.reset.bind(this)} >התחל מחדש</button>
+                    </div>
+                </div>;
+                break;
             default:
-                return <div>default</div>;
+                body = <div>default</div>;
+                break;
+                
         }
+
+        return this.state.currentStage > 0 && this.state.currentStage < 4 ? <div>{body}{skip}{back}</div> : <div>{body}</div>;
     }
 }
 

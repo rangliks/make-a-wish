@@ -20,7 +20,7 @@
 
 .App-body {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 1000px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -60,8 +60,9 @@ tr {
 table {
   width: 100%;
   margin: auto;
-  border: 1px solid #ddd;
+  border: 1px solid #434c5f;
 }
+
 .wish-box {
   display: inline-block;
   width: 70%;
@@ -71,7 +72,7 @@ table {
   text-align: right;
 }
 td {
-  overflow: hidden; width: 280px; text-align: left; vertical-align: top; white-space: nowrap;border: 1px solid #ddd; word-wrap: normal;
+  overflow: hidden; width: 280px; text-align: left; vertical-align: top; white-space: nowrap;border: 1px solid #434c5f; word-wrap: normal;
 }
 
 .blurry {
@@ -137,4 +138,22 @@ p {
 .communicate-sentences-section {
     position: absolute;
     top: 0; right: 0; bottom: 0; left: 0;
+}
+
+.app-button {
+  background: transparent;
+}
+
+.top-button-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: transparent;
+}
+
+.top-button-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: transparent;
 }

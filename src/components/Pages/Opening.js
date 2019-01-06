@@ -10,7 +10,7 @@ class Opening extends React.Component {
                         <img src="wish.jpg" className="wish-opening" alt="hidden wish" />
                     </div>
                     <div style={{clear: "both", margin: "5%" }}>
-                        <button type="button" className="btn btn-primary" onClick={this.goToNextPage.bind(this)} >...המשך</button>
+                        <button type="button" className="btn btn-primary app-button" onClick={this.goToNextPage.bind(this)} >...המשך</button>
                     </div>
                 </div>;
     }

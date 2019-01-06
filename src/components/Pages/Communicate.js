@@ -65,7 +65,7 @@ class Communicate extends React.Component {
         if (this.state.complete) {
             next.push(
                 <div style={{ clear: "both", margin: "5%" }}>
-                    <button type="button" className="btn btn-primary" onClick={this.goToNextPage.bind(this)} >...המשך</button>
+                    <button type="button" className="btn btn-primary app-button" onClick={this.goToNextPage.bind(this)} >...המשך</button>
                 </div>
             )
         }

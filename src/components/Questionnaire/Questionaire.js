@@ -7,6 +7,7 @@ class Questionaire extends React.Component {
     constructor(props) {
         super();
         this.state = {
+            finalSentence: questionsJson.final_sentence,
             questions: questionsJson,
             totalQuestions: questionsJson.questions.length,
             currentQuestion: 0,
@@ -76,7 +77,6 @@ class Questionaire extends React.Component {
     }
 
     render() {
-        // console.log(this.state.currentQuestion, this.state.totalQuestions)
         let qs = this.state.questions.questions[this.state.currentQuestion];
         let answersRows = [];
         for (let i = 0; i <= this.state.totalQuestions; i++) {
@@ -90,17 +90,17 @@ class Questionaire extends React.Component {
             );
         }
         let nextButton = <div />;
-        console.log('current::::::', this.state.currentQuestion, this.state.totalQuestions)
-        if (this.state.currentQuestion >= this.state.totalQuestions) {
+        let done = this.state.currentQuestion >= this.state.totalQuestions;
+        if (done) {
             nextButton = <ul className="pager">
-                <li><button type="button" className="btn btn-primary" onClick={this.goToNextPage.bind(this)} >...המשך</button></li>
+                <li><button type="button" className="btn btn-primary app-button" onClick={this.goToNextPage.bind(this)} >...המשך</button></li>
             </ul>
         }
-        // console.log('question is');
-        // console.log(this.state.questions.questions[this.state.currentQuestion]);
+        
+        let question = done ? this.state.finalSentence : qs.question;
         return <div className="wish" >
-            <Question question={qs ? qs.question : ''} />
-            <table>
+            <Question question={question} />
+            <table cellspacing="0" cellpadding="0">
                 <thead>
                     <tr>
                         <th></th>
