@@ -53,6 +53,8 @@ class AppWrapper extends React.Component {
         let body;
         switch (this.state.currentStage) {
             case 0:
+                skip = [];
+                back = [];
                 body = <div className="app-body-inner" ><Opening formCallback={this.formCallback.bind(this)} /></div>;
                 break;
             case 1:
