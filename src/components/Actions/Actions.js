@@ -1,12 +1,12 @@
 import React from 'react';
-import actionsJson from '../../actions/actions.json'
+import actionsJson from '../../data/actions/actions.json'
 
 class Actions extends React.Component {
     constructor(props) {
         super();
         let modules = {};
         for (const moduleName in actionsJson) {
-            modules[moduleName] = require(`./${moduleName}`);
+            modules[moduleName] = require(`./${moduleName.toLowerCase()}/${moduleName}`);
         }
 
         this.state = {

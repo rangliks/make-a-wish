@@ -163,3 +163,7 @@ p {
 .app-body-inner {
   margin-top: 4%;
 }
+
+.done-right-answer {
+  font-weight: bold;
+}

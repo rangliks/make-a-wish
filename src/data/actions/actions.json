@@ -1,0 +1,63 @@
+{
+    "Watch": {
+        "text": "אני רוצה לראות",
+        "class": "btn btn-primary"
+    },
+    "Learn": {
+        "text": "אני רוצה ללמוד",
+        "class": "btn btn-secondary"
+    },
+    "Join": {
+        "text": "אני רוצה לקחת חלק",
+        "class": "btn btn-success"
+    },
+    "Donate": {
+        "text": "אני רוצה לתרום",
+        "class": "btn btn-danger"
+    },
+    "Update": {
+        "text": "אני רוצה להתעדכן",
+        "class": "btn btn-warning",
+        "newsletters": {
+            "freedom-farm" : {
+                "formUrl" : "https://www.freedom-farm.org.il/%D7%94%D7%A8%D7%A9%D7%9E%D7%94-%D7%9C%D7%A0%D7%99%D7%95%D7%96%D7%9C%D7%98%D7%A8/",
+                "thumb" : {
+                    "description": "הירשמו לניוזלטר של חוות החופש",
+                    "url": "https://www.freedom-farm.org.il/wp-content/themes/border-child/assets/images/freedon-farm-logo-he.png"
+                }
+            },
+            "22-challenge" : {
+                "formUrl" : "https://etgar22.co.il/?fbclid=IwAR24D_UEtGNIzPA1cwha9XdBkDh-fl2STtpYWrLMtkDlL8Uqy-O9LqKPq5U",
+                "thumb" : {
+                    "description": "אתגר 22",
+                    "url": "https://etgar22.co.il/wp-content/uploads/2016/10/%D7%90%D7%AA%D7%92%D7%A822small.png"
+                }
+            },
+            "animals" : {
+                "formUrl" : "https://animals-now.org/field/join/?fbclid=IwAR1o0QjhAOT4ti8f34ioTPb1TtIV4sUlMRR7dR_p0yiHq0IYuerk5CZBt-s",
+                "thumb" : {
+                    "description": "אנימלס",
+                    "url": "https://animals-now.org/wp-content/uploads/logo.png"
+                }
+            },
+            "365-project" : {
+                "formUrl" : "http://www.vegan-guide.co.il/?fbclid=IwAR1a2Q9-vycmKVf_ydTAROpJUpSMGJsY8WDg9NxayW0ES_Xg92BGZ2EAL08",
+                "thumb" : {
+                    "description": "פרוייקט 365",
+                    "url": "http://panel.sendmsg.co.il/userfiles/site8921/images/21369209_918903198248315_4356952123393509785_n.png"
+                }
+            },
+            "vegan-friendly" : {
+                "formUrl" : "https://www.vegan-friendly.co.il",
+                "thumb" : {
+                    "description": "ויגן פרינדלי",
+                    "url": "https://www.vegan-friendly.co.il/img/main/vflogoSm.png"
+                }
+            }
+        }
+    },
+    "Share": {
+        "text": "אני רוצה להעביר את זה הלאה",
+        "class": "btn btn-info"
+    }
+}

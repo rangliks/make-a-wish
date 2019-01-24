@@ -33,7 +33,7 @@ class Communicate extends React.Component {
     componentDidMount() {
         setTimeout(() => {
             this.setState({
-                step: 1
+                step: 2
             })
         }, SENTENCE_SPEED);
     }
@@ -49,11 +49,12 @@ class Communicate extends React.Component {
         } else {
             setTimeout(() => {
                 this.setState({
-                    step: this.state.step + 1
+                    step: this.state.step + 2
                 });
             }, SENTENCE_SPEED);
         }
     }
+
     render() {
 
         let sentences = [];

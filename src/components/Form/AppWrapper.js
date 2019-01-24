@@ -3,6 +3,7 @@ import Questionaire from '../Questionnaire/Questionaire';
 import Opening from '../Pages/Opening';
 import Communicate from '../Pages/Communicate';
 import Actions from '../Actions/Actions';
+import ActionsPageVideo from '../Pages/ActionsPageVideo';
 
 class AppWrapper extends React.Component {
     constructor(props) {
@@ -35,20 +36,20 @@ class AppWrapper extends React.Component {
     }
 
     back() {
-        if(this.state.currentStage > 0) {
+        if (this.state.currentStage > 0) {
             this.setState({
-                currentStage: this.state.currentStage -1
+                currentStage: this.state.currentStage - 1
             });
         }
     }
 
     render() {
-        let skip =  <div style={{ clear: "both", margin: "5%" }}>
-                        <button type="button" className="btn btn-primary top-button-right" onClick={this.skip.bind(this)} >דלג</button>
-                    </div>;
-        let back =  <div style={{ clear: "both", margin: "5%" }}>
-                        <button type="button" className="btn btn-primary top-button-left" onClick={this.back.bind(this)} >חזור</button>
-                    </div>;
+        let skip = <div style={{ clear: "both", margin: "5%" }}>
+            <button type="button" className="btn btn-primary top-button-right" onClick={this.skip.bind(this)} >דלג</button>
+        </div>;
+        let back = <div style={{ clear: "both", margin: "5%" }}>
+            <button type="button" className="btn btn-primary top-button-left" onClick={this.back.bind(this)} >חזור</button>
+        </div>;
         let body;
         switch (this.state.currentStage) {
             case 0:
@@ -61,9 +62,12 @@ class AppWrapper extends React.Component {
                 body = <div className="app-body-inner"><Communicate formCallback={this.formCallback.bind(this)} /></div>;
                 break;
             case 3:
-                body = <div className="app-body-inner"><Actions formCallback={this.formCallback.bind(this)} /></div>;
+                body = <div className="app-body-inner"><ActionsPageVideo formCallback={this.formCallback.bind(this)} /></div>;
                 break;
             case 4:
+                body = <div className="app-body-inner"><Actions formCallback={this.formCallback.bind(this)} /></div>;
+                break;
+            case 5:
                 body = <div className="app-body-inner">
                     <div style={{ clear: "both", margin: "5%" }}>
                         <button type="button" className="btn btn-primary" onClick={this.reset.bind(this)} >התחל מחדש</button>
@@ -73,11 +77,11 @@ class AppWrapper extends React.Component {
             default:
                 body = <div>default</div>;
                 break;
-                
+
         }
 
-        return this.state.currentStage > 0 && this.state.currentStage < 4 ? 
-            <div>{body}{skip}{back}</div> : 
+        return this.state.currentStage > 0 && this.state.currentStage < 4 ?
+            <div>{body}{skip}{back}</div> :
             <div>{body}</div>;
     }
 }

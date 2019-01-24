@@ -1,13 +1,14 @@
 import React from 'react';
 import Question from './Question';
 import WishBox from "./WishBox";
-import questionsJson from '../../questionaires/questions.json';
+import questionsJson from '../../data/questionaires/questions.json';
 
 class Questionaire extends React.Component {
     constructor(props) {
         super();
         this.state = {
             finalSentence: questionsJson.final_sentence,
+            startSentence: questionsJson.final_sentence,
             questions: questionsJson,
             totalQuestions: questionsJson.questions.length,
             currentQuestion: 0,
@@ -77,6 +78,17 @@ class Questionaire extends React.Component {
     }
 
     render() {
+        if(this.state.finalSentence) {
+            setTimeout(() => {
+                this.setState({
+                    finalSentence: null
+                })
+            }, 2000);
+            return <div className="wish" >
+            <Question question={this.state.finalSentence} />
+        </div>
+        }
+
         let qs = this.state.questions.questions[this.state.currentQuestion];
         let answersRows = [];
         for (let i = 0; i <= this.state.totalQuestions; i++) {
@@ -97,7 +109,7 @@ class Questionaire extends React.Component {
             </ul>
         }
         
-        let question = done ? this.state.finalSentence : qs.question;
+        let question = qs ? qs.question : this.state.startSentence;
         return <div className="wish" >
             <Question question={question} />
             <table cellspacing="0" cellpadding="0">

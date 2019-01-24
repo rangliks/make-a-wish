@@ -1,7 +1,7 @@
 import React from 'react';
-import NavigationButton from '../Form/NavigationButton';
+import NavigationButton from '../../Form/NavigationButton';
 
-class Donate extends React.Component {
+class Learn extends React.Component {
     render() {
         return  <div> 
                     <div>{this.props.action.text}</div>
@@ -10,4 +10,4 @@ class Donate extends React.Component {
     }
 }
 
-export default Donate;
+export default Learn;

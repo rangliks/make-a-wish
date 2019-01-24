@@ -1,7 +1,7 @@
 import React from 'react';
-import NavigationButton from '../Form/NavigationButton';
+import NavigationButton from '../../Form/NavigationButton';
 
-class Update extends React.Component {
+class Share extends React.Component {
     render() {
         return  <div> 
                     <div>{this.props.action.text}</div>
@@ -10,4 +10,4 @@ class Update extends React.Component {
     }
 }
 
-export default Update;
+export default Share;
